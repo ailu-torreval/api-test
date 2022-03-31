@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    api key = AIzaSyCv8E4cyKmeVNQtrLEnzrIMh9QnnOaKkT4
+</body>
+<script>
+    let dataDb = [];
+    const key = "AIzaSyCv8E4cyKmeVNQtrLEnzrIMh9QnnOaKkT4";
+    const url = encodeURIComponent('https://www.infobae.com/america/');
+    async function getSpeedData() {
+        const result = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${url}&key=${key}`);
+        const data = await result.json();
+        // console.log(data);
+        dataDb.push(data);
+        console.log("db=", dataDb);
+
+    }
+    getSpeedData();
+
+</script>
+
+</html>
